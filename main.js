@@ -1,4 +1,5 @@
-<script type="text/javascript" src="main.js"></script>
+< script type = "text/javascript"
+src = "main.js" > < /script>
 
 var version = '.1';
 console.log(version);
@@ -18,81 +19,81 @@ let mushroomWorker = 0;
 let pigWorkers = 0;
 
 function mushroomSubtract() {
-	if(mushroomWorker >= 1){
+  if (mushroomWorker >= 1) {
     mushroomWorker--;
-    update();
-} else {
-return false;
-}
+    updateMushroom();
+  } else {
+    return false;
+  }
 }
 
 function mushroomSubtract5() {
-if (mushroomWorker >= 5){
+  if (mushroomWorker >= 5) {
     mushroomWorker = mushroomWorker - 5;
-    update();
-} else {
-return false;
-}
+    updateMushroom();
+  } else {
+    return false;
+  }
 }
 
 function mushroomAdd() {
-    if (mushroomWorker < totalCitizens){
+  if (mushroomWorker < totalCitizens) {
     mushroomWorker++;
-    update();
-} else {
+    updateMushroom();
+  } else {
     return false;
-}
+  }
 }
 
 function mushroomAdd5() {
-if (mushroomWorker <= totalCitizens - 5){
+  if (mushroomWorker <= totalCitizens - 5) {
     mushroomWorker = mushroomWorker + 5;
-    update();
-}
+    updateMushroom();
+  }
 }
 
-function update() {
-    document.getElementById("mushrooms").value = mushroomWorker;
+function updateMushroom() {
+  document.getElementById("mushrooms").value = mushroomWorker;
 }
-update();
+updateMushroom();
 
 
 //pigsWorkers count
 
-function pigsubtract() {
+function pigSubtract() {
 	if(pigWorkers >= 1){
     pigWorkers--;
-    update();
+    updatePig();
 } else {
 return false;
 }
 }
-
-function pigsubtract5() {
-if (pigWorkers >= 5){
+function pigSubtract5() {
+  if (pigWorkers >= 5) {
     pigWorkers = pigWorkers - 5;
-    update();
-} else {
-return false;
-}
-}
-
-function pigadd() {
-    if (pigWorkers < totalCitizens){
-    pigWorkers++;
-    update();
-} else {
+    updatePig();
+  } else {
     return false;
-}
+  }
 }
 
-function pigadd5() {
-if (pigWorkers <= totalCitizens - 5){
+function pigAdd() {
+  if (pigWorkers < totalCitizens) {
+    pigWorkers++;
+    updatePig();
+  } else {
+    return false;
+  }
+}
+
+function pigAdd5() {
+  if (pigWorkers <= totalCitizens - 5) {
     pigWorkers = pigWorkers + 5;
-    update();
+    updatePig();
+  }
 }
+
+function updatePig() {
+  document.getElementById("pigs").value = pigWorkers;
 }
-function update() {
-    document.getElementById("pigs").value = pigWorkers;
-}
-update();
+updatePig();
