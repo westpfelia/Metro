@@ -5,7 +5,7 @@ var version = '.1';
 console.log(version);
 
 //resources
-var vodka = 0;
+var vodka = 1;
 var shrooms = 0;
 var bullets = 0;
 var pigs = 0;
@@ -13,10 +13,12 @@ var MGB = 5;
 var bullets = 0;
 var filters = 0;
 let totalCitizens = 50;
+let mushroomTea = 0;
 
 //mushroomWOrkers count
 let mushroomWorker = 0;
 let pigWorkers = 0;
+let teaWorkers = 0;
 
 function mushroomSubtract() {
   if (mushroomWorker >= 1) {
@@ -97,3 +99,16 @@ function updatePig() {
   document.getElementById("pigs").value = pigWorkers;
 }
 updatePig();
+
+function makeTea() {
+  if (teaWorkers > totalCitizens) {
+    teaWorkers++;
+    updateTea();
+  } else {
+    return false;
+  }
+}
+
+function updateTea (){
+  document.getElementById("mushroom tea").value = teaWorkers;
+}
