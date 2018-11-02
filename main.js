@@ -4,6 +4,11 @@ src = "main.js" > < /script>
 var version = '.1';
 console.log(version);
 
+var speed = 1000;
+var gameTime = setInterval(function(){
+  addHour
+})
+
 //resources
 var vodka = 1;
 var shrooms = 0;
@@ -100,12 +105,37 @@ function updatePig() {
 }
 updatePig();
 
-function makeTea() {
-  if (teaWorkers > totalCitizens) {
+function teaSubtract() {
+  if (teaWorkers >= 1) {
+    teaWorkers--;
+    updateTea();
+  } else {
+    return false;
+  }
+}
+
+function teaSubtract5() {
+  if (teaWorkers >= 5) {
+    teaWorkers = teaWorkers - 5;
+    updateTea();
+  } else {
+    return false;
+  }
+}
+
+function teaAdd() {
+  if (teaWorkers < totalCitizens) {
     teaWorkers++;
     updateTea();
   } else {
     return false;
+  }
+}
+
+function teaAdd5() {
+  if (teaWorkers <= totalCitizens - 5) {
+    teaWorkers = teaWorkers + 5;
+    updateTea();
   }
 }
 
