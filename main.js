@@ -17,8 +17,10 @@ var pigs = 0;
 var MGB = 5;
 var bullets = 0;
 var filters = 0;
-let totalCitizens = 50;
 let mushroomTea = 0;
+//resources
+let totalCitizens = 50;
+let assignedCitizens = 0;
 
 //mushroomWOrkers count
 let mushroomWorker = 0;
@@ -28,7 +30,9 @@ let teaWorkers = 0;
 function mushroomSubtract() {
   if (mushroomWorker >= 1) {
     mushroomWorker--;
+    assignedCitizens--;
     updateMushroom();
+    updateAssignedCitizens();
   } else {
     return false;
   }
@@ -37,7 +41,9 @@ function mushroomSubtract() {
 function mushroomSubtract5() {
   if (mushroomWorker >= 5) {
     mushroomWorker = mushroomWorker - 5;
+    assignedCitizens = assignedCitizens - 5;
     updateMushroom();
+    updateAssignedCitizens();
   } else {
     return false;
   }
@@ -46,7 +52,9 @@ function mushroomSubtract5() {
 function mushroomAdd() {
   if (mushroomWorker < totalCitizens) {
     mushroomWorker++;
+    assignedCitizens++;
     updateMushroom();
+    updateAssignedCitizens();
   } else {
     return false;
   }
@@ -55,8 +63,13 @@ function mushroomAdd() {
 function mushroomAdd5() {
   if (mushroomWorker <= totalCitizens - 5) {
     mushroomWorker = mushroomWorker + 5;
+    assignedCitizens = assignedCitizens + 5;
     updateMushroom();
+    updateAssignedCitizens();
+  } else {
+  return false;
   }
+
 }
 
 function updateMushroom() {
@@ -64,17 +77,23 @@ function updateMushroom() {
 }
 updateMushroom();
 
+function updateAsssignedCitizens () {
+document.getElementById("Assigned").innerHTML = assignedCitizens;
+}
+updateAssignedCitizens();
+
 
 //pigsWorkers count
 
 function pigSubtract() {
-	if(pigWorkers >= 1){
+  if (pigWorkers >= 1) {
     pigWorkers--;
     updatePig();
-} else {
-return false;
+  } else {
+    return false;
+  }
 }
-}
+
 function pigSubtract5() {
   if (pigWorkers >= 5) {
     pigWorkers = pigWorkers - 5;
@@ -139,6 +158,7 @@ function teaAdd5() {
   }
 }
 
-function updateTea (){
+function updateTea() {
   document.getElementById("mushroom tea").value = teaWorkers;
 }
+updateTea();
