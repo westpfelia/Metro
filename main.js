@@ -1,17 +1,5 @@
-< script type = "text/javascript"
-src = "main.js" > < /script>
-
-var version = '.1';
-console.log(version);
-
-var speed = 1000;
-var gameTime = setInterval(function(){
-  addHour
-})
-
 //resources
 var vodka = 1;
-var shrooms = 0;
 var bullets = 0;
 var pigs = 0;
 var MGB = 5;
@@ -26,6 +14,8 @@ let assignedCitizens = 0;
 let mushroomWorker = 0;
 let pigWorkers = 0;
 let teaWorkers = 0;
+var shrooms = mushroomWorker * 2;
+
 
 function mushroomSubtract() {
   if (mushroomWorker >= 1) {
@@ -67,7 +57,7 @@ function mushroomAdd5() {
     updateMushroom();
     updateAssignedCitizens();
   } else {
-  return false;
+    return false;
   }
 
 }
@@ -77,8 +67,8 @@ function updateMushroom() {
 }
 updateMushroom();
 
-function updateAsssignedCitizens () {
-document.getElementById("Assigned").innerHTML = assignedCitizens;
+function updateAsssignedCitizens() {
+  document.getElementById("Assigned").innerHTML = assignedCitizens;
 }
 updateAssignedCitizens();
 
@@ -116,6 +106,8 @@ function pigAdd5() {
   if (pigWorkers <= totalCitizens - 5) {
     pigWorkers = pigWorkers + 5;
     updatePig();
+  } else {
+  return false;
   }
 }
 
@@ -155,6 +147,8 @@ function teaAdd5() {
   if (teaWorkers <= totalCitizens - 5) {
     teaWorkers = teaWorkers + 5;
     updateTea();
+  } else {
+  return false;
   }
 }
 
